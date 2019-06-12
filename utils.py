@@ -50,8 +50,8 @@ def queryCommodity(cType,startTime,endTime,client):
     if(len(prices) == 0):
         # There was no match
         return json.dumps({'Error':'There was no matching commodity'})
-    cMean = statistics.mean(prices)
-    cVariance=statistics.variance(prices)
+    cMean = float("{0:.2f}".format(statistics.mean(prices)))
+    cVariance=float("{0:.2f}".format(statistics.variance(prices)))
 
     result['data'] = data
     result['mean'] = cMean
